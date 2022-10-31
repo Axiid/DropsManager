@@ -22,19 +22,21 @@ public class DropListeners implements Listener
     public void onDrop(PlayerDropItemEvent event) {
         Player player = event.getPlayer();
 
-        if(!ItemAPI.canDrop()) {
-            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.cant-drop")));
+        String itemName = event.getItemDrop().getItemStack().getType().toString().replace('_', ' ').toLowerCase();
+        String finalItemName = itemName.substring(0, 1).toUpperCase() + itemName.substring(1);
+
+        if(ItemAPI.cantDrop()) {
+            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.cant-drop").replace("%prefix%", ChatUtils.prefix)));
             event.setCancelled(true);
             return;
         }
 
-        if(!ItemAPI.isGlowing()) {
-            event.getItemDrop().setGlowing(true);
-        }
-
         if(!ItemAPI.getCustomName().equals("")) {
             ItemMeta item = event.getItemDrop().getItemStack().getItemMeta();
-            item.setDisplayName(ChatUtils.color(instance.getConfig().getString("settings.custom-name")));
+            item.setDisplayName(ChatUtils.color(instance.getConfig().getString("settings.custom-name")
+                    .replace("%prefix%", ChatUtils.prefix)
+                    .replace("%item%", finalItemName)
+            ));
             event.getItemDrop().getItemStack().setItemMeta(item);
         }
 

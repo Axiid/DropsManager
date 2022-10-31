@@ -11,7 +11,7 @@ public class ChatUtils
     public static String prefix = color(instance.getConfig().getString("prefix"));
 
     public static String color(String path) {
-        return ChatColor.translateAlternateColorCodes('&', path.replace("%prefix%", prefix));
+        return ChatColor.translateAlternateColorCodes('&', path);
     }
 
 }

@@ -30,10 +30,10 @@ public class MainCommand extends AbstractCommand {
             instance.reloadConfig();
             instance.saveConfig();
 
-            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.plugin-reloaded")));
+            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.plugin-reloaded").replace("%prefix%", ChatUtils.prefix)));
             return;
         }
-        player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.invalid-arguments")));
+        player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.invalid-arguments").replace("%prefix%", ChatUtils.prefix)));
     }
 
 }

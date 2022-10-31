@@ -39,7 +39,7 @@ public abstract class AbstractCommand implements CommandExecutor
         Player player = (Player) sender;
 
         if(permission != null && !player.hasPermission(permission)) {
-            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.insufficient-permissions")));
+            player.sendMessage(ChatUtils.color(instance.getConfig().getString("messages.insufficient-permissions").replace("%prefix%", ChatUtils.prefix)));
             return true;
         }
 

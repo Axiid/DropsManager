@@ -6,12 +6,8 @@ import it.axiid.drops.utils.chat.ChatUtils;
 public interface ItemAPI
 {
 
-    static boolean isGlowing() {
-        return DropsManager.getInstance().getConfig().getBoolean("settings.glowing");
-    }
-
-    static boolean canDrop() {
-        return DropsManager.getInstance().getConfig().getBoolean("settings.cant-drop");
+    static boolean cantDrop() {
+        return DropsManager.getInstance().getConfig().getBoolean("settings.anti-drop");
     }
 
     static int getPickupDelay() {

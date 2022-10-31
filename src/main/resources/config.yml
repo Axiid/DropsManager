@@ -10,11 +10,10 @@ prefix: "&8[&bDrops&3Manager&8] &7"
 settings:
   # Anti Drop system
   anti-drop: false
-  # Set if the dropped item glowing
-  glowing: true
   # Set custom name of the dropped item
   custom-name: "&a%item%"
   # The delay before this item is available to be picked up by players
+  # 20 = 1 second
   pickup-delay: 20
 
 
