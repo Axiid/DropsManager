@@ -1,0 +1,10 @@
+name: DropsManager
+version: '${version}'
+main: it.axiid.drops.DropsManager
+author: Axiid
+commands:
+  dropsmanager:
+    description: Main command
+    aliases:
+      - drops
+      - dropsm
