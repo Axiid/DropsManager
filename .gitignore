@@ -19,7 +19,7 @@ atlassian-ide-plugin.xml
 # Log file
 *.log
 
-# BlueJ files
+# BlueJ configuration
 *.ctxt
 
 # Package Files #
@@ -36,7 +36,7 @@ hs_err_pid*
 
 *~
 
-# temporary files which can be created if a process still has a handle open of a deleted file
+# temporary configuration which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
 # KDE directory preferences
@@ -45,7 +45,7 @@ hs_err_pid*
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-# .nfs files are created when an open file is removed but is still being accessed
+# .nfs configuration are created when an open file is removed but is still being accessed
 .nfs*
 
 # General
@@ -75,7 +75,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows thumbnail cache files
+# Windows thumbnail cache configuration
 Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
@@ -90,7 +90,7 @@ ehthumbs_vista.db
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Windows Installer files
+# Windows Installer configuration
 *.cab
 *.msi
 *.msix
@@ -114,5 +114,5 @@ gradle-app.setting
 # Common working directory
 run/
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+# Avoid ignoring Gradle wrapper jar file (.jar configuration are usually ignored)
 !gradle-wrapper.jar

@@ -2,8 +2,7 @@ package it.axiid.drops;
 
 import it.axiid.drops.commands.main.MainCommand;
 import it.axiid.drops.listeners.DropListeners;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.PluginManager;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DropsManager extends JavaPlugin {
@@ -21,16 +20,17 @@ public final class DropsManager extends JavaPlugin {
         saveDefaultConfig();
 
         registerCommands();
-        registerListeners();
+        registerListeners(new DropListeners());
     }
 
-    public void registerCommands() {
+    private void registerCommands() {
         new MainCommand(this);
     }
 
-    public void registerListeners() {
-        PluginManager pm = Bukkit.getPluginManager();
-        pm.registerEvents(new DropListeners(this), this);
+    private void registerListeners(Listener... listeners) {
+        for (Listener listener : listeners) {
+            getServer().getPluginManager().registerEvents(listener, this);
+        }
     }
 
     @Override

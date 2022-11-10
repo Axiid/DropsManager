@@ -1,21 +1,11 @@
 package it.axiid.drops.api.items;
 
-import it.axiid.drops.DropsManager;
-import it.axiid.drops.utils.chat.ChatUtils;
+public interface ItemAPI {
 
-public interface ItemAPI
-{
+    boolean cantDrop();
 
-    static boolean cantDrop() {
-        return DropsManager.getInstance().getConfig().getBoolean("settings.anti-drop");
-    }
+    int getPickupDelay();
 
-    static int getPickupDelay() {
-        return DropsManager.getInstance().getConfig().getInt("settings.pickup-delay");
-    }
-
-    static String getCustomName() {
-        return ChatUtils.color(DropsManager.getInstance().getConfig().getString("settings.custom-name"));
-    }
+    String getCustomName();
 
 }
